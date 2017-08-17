@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>19</title>
+    <script type="text/javascript" src="../../angular/angular-1.5.8/angular.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+<form action="3.php" method="post">
+    <input type="text"name="a" readonly="readonly" value="majla"><br/>
+    <!--不可修改，可以提交-->
+    <input type="text"name="b" disabled="disabled" value="majlb"><br/>
+    <!--不可修改，不可提交-->
+    <button type="submit">submit</button><br/>
+
+    年龄：<input type="text" ng-model="user.age"><br/>
+    邮箱：<input type="text" ng-model="user.mail" ng-readonly="user.uid"><br/>
+</form>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', ['$scope', function ($scope) {
+        $scope.user={age:25,uid:1,mail:'1286657476@qq.com'}
+
+    }])
+</script>
+
+</body>
+</html>
+
+
+
+
+
+

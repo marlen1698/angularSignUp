@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>8 ng-value</title>
+    <script type="text/javascript" src="../../angular/angular-1.5.8/angular.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+
+
+商品：<input type="text" ng-model="goods.title"><br/>
+价格：<input type="text" ng-model="goods.price" disabled><br/>
+数量：<input type="text" ng-model="goods.num"><br/>
+总计：<input type="text" ng-value="goods.price*goods.num" readonly><br/>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', ['$scope', function ($scope) {
+        $scope.goods ={'title':'mac','price':'3','num':'2'};
+    }])
+</script>
+
+</body>
+</html>

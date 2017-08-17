@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>19</title>
+    <script type="text/javascript" src="../../angular/angular-1.5.8/angular.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+
+<p>协议：<input type="checkbox" ng-model="copyright">接受</p>
+<button type="submit" ng-disabled="!copyright">提交</button>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', ['$scope', function ($scope) {
+
+    }])
+</script>
+
+</body>
+</html>
+
+
+
+
+
+

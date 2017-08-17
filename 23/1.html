@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>23ng-style</title>
+    <style>
+
+    </style>
+    <script type="text/javascript" src="../../angular/angular-1.5.8/angular.min.js"></script>
+   </head>
+<body ng-app="myApp" ng-controller="myCtrl">
+颜色：<input type="text" ng-model="color">
+字号：<input type="text" ng-model="size"><br>
+
+<span ng-style="{color:color,fontSize:size+'px'}">majl</span>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', ['$scope', function ($scope) {
+
+
+    }])
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

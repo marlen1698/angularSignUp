@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>18,</title>
+    <script type="text/javascript" src="../../angular/angular-1.5.8/angular.min.js"></script>
+    <script type="text/javascript" src="../../angular/js/jquery-2.1.1.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+
+<ul>
+    <!--$first 第一个 $last第二个 $middle中间的，去除第一个和最后一个 $odd奇数行 $even偶数行 -->
+    <li ng-repeat="(k,v) in data" style="{{$even?'color:red':''}}">
+        {{k}}
+       {{v.name}}
+       {{v.class}}
+    </li>
+</ul>
+<hr/>
+
+<ul>
+    <li ng-repeat="(k,v) in data">
+        <span ng-if="$first" style="{{$first?'color:red':''}}">{{k}}{{v.name}}{{v.class}}</span>
+        <span ng-if="$middle">{{k}}{{v.name}}{{v.class}}</span>
+        <span ng-if="$last" style="{{$last?'color:green':''}}">{{k}}{{v.name}}{{v.class}}</span>
+    </li>
+
+</ul>
+
+<script type="text/javascript" src="bundle.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+

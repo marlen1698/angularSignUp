@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3from表单</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <style>
+        .wrapper {
+            margin-top: 40px;
+        }
+        .error {
+            border: red 1px solid;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .fa-position {
+            position: relative;
+        }
+        .fa-right {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+        }
+    </style>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+<div class="wrapper container">
+    <form name="signUpForm" ng-submit="submitForm()" action="" method="post" class="form-horizontal" role="form">
+        <div class="form-group">
+            <legend>Sign in/Sign up</legend>
+        </div>
+        <div class="form-group fa-position" ng-class="{'has-success':signUpForm.username.$valid}">
+            <div class="col-sm-12">
+                <pre>合法性：{{signUpForm.username.$valid}}</pre>
+                <pre>{{userdata.username}}</pre>
+            </div>
+            <label class="col-sm-2 control-label">用户名：</label>
+            <div class="col-sm-10">
+                <input type="text" name="username"
+                       placeholder="用户名/邮箱/手机号"
+                       ng-model="userdata.username"
+                       ng-minlength="4"
+                       ng-maxlength="16"
+                       class="form-control" required>
+                <i class="fa fa-check fa-right" aria-hidden="true" ng-if="signUpForm.username.$valid"></i>
+                <p class="error" ng-if="signUpForm.username.$error.required && signUpForm.username.$touched">用户名不能为空</p>
+                <p class="error"
+                   ng-if="(signUpForm.username.$error.minlength || signUpForm.username.$error.maxlength) && signUpForm.username.$touched">
+                    请输入4-16位信息</p>
+            </div>
+        </div>
+        <div class="form-group fa-position" ng-class="{'has-success':signUpForm.password.$valid}">
+            <div class="col-sm-12">
+                <pre>合法性：{{signUpForm.password.$valid}}</pre>
+                <pre>{{userdata.password}}</pre>
+            </div>
+            <label class="col-sm-2 control-label">密码：</label>
+            <div class="col-sm-10">
+                <input type="password" name="password"
+
+                       placeholder="请输入密码"
+                       ng-model="userdata.password"
+                       ng-minlength="4"
+                       ng-maxlength="255"
+                       class="form-control" required>
+                <i class="fa fa-check fa-right" aria-hidden="true" ng-if="signUpForm.password.$valid"></i>
+                <p class="error" ng-if="signUpForm.password.$error.required && signUpForm.password.$touched">密码不能为空</p>
+                <p class="error"
+                   ng-if="(signUpForm.password.$error.minlength ||signUpForm.password.$error.maxlength)&&signUpForm.password.$touched">
+                    请输入4-255位信息</p>
+            </div>
+        </div>
+        <div class="form-group fa-position" ng-class="{'has-success':signUpForm.password2.$valid}">
+            <div class="col-sm-12">
+                <pre>合法性：{{signUpForm.password2.$valid}}</pre>
+                <pre>{{userdata.password2}}</pre>
+            </div>
+            <label class="col-sm-2 control-label">确认密码：</label>
+            <div class="col-sm-10">
+                <input type="password" name="password2"
+                       ng-model="userdata.password2"
+                       ng-minlength="4"
+                       ng-maxlength="16"
+                       class="form-control"
+                       compare="userdata.password"
+                       placeholder="" required>
+                <i class="fa fa-check fa-right" aria-hidden="true" ng-if="signUpForm.password2.$valid"></i>
+                <p class="error"
+                   ng-if="(signUpForm.password2.$error.compare ||signUpForm.password2.$error.maxlength)&&signUpForm.password2.$touched">
+                    两次输入密码不一致</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-10 col-sm-offset-2">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="../../angular/angular-1.5.8/angular.min.js"></script>
+<script type="application/javascript" src="signup.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>17ng-if ng-show ,,,</title>
+    <script type="text/javascript" src="../../angular/angular-1.5.8/angular.min.js"></script>
+    <script type="text/javascript" src="../../angular/js/jquery-2.1.1.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+
+<input type="checkbox" ng-model="status">{{status}}
+<button ng-init="copyright=true" ng-click="copyright=!copyright">查看协议</button>
+<hr>
+<textarea ng-if="copyright">协议内容：本人majl
+</textarea>
+<hr/>
+<button ng-disabled="status">注册</button>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', ['$scope', function ($scope) {
+    }])
+</script>
+
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>18,track by $index</title>
+    <script type="text/javascript" src="../../angular/angular-1.5.8/angular.min.js"></script>
+    <script type="text/javascript" src="../../angular/js/jquery-2.1.1.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+
+<ul>
+    <!--解决相同数组-->
+    <li ng-repeat="v in data track by $index" >
+      {{v}}
+    </li>
+</ul>
+<hr/>
+
+
+
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', ['$scope', function ($scope) {
+        $scope.data = [
+            'majl','majl','huahhua','hehan',
+        ]
+    }])
+</script>
+
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>19</title>
+    <script type="text/javascript" src="../../angular/angular-1.5.8/angular.min.js"></script>
+    <script type="text/javascript" src="../../angular/js/jquery-2.1.1.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+
+性别：<select ng-model="user.sex">
+    <option value="">请选择性别</option>
+    <option ng-value="1" ng-selected="user.sex==1">男</option>
+    <option ng-value="2" ng-selected="user.sex==2">女</option>
+</select>
+<input type="radio" ng-model="user.sex" ng-value="1">男
+<input type="radio" ng-model="user.sex" ng-value="2">女
+
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', ['$scope', function ($scope) {
+
+    }])
+</script>
+
+</body>
+</html>
+
+
+
+
+
+

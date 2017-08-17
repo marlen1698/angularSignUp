@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>25demo</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <style>
+        .mobile{
+            border: 1px solid #999999;
+            height: 500px;
+            display: flex;
+        }
+        .mobile dl{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column-reverse;
+            flex: 1;
+        }
+        .mobile dl dt{
+            background: #000;
+            color: #ffffff;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border: 1px solid #f3f3f3;
+        }
+        .mobile dl dt:first-child,.mobile dl:first-child dd a{
+            border-right: none;
+        }
+        .mobile dl dt:last-child ,.mobile dl:last-child  dd a{
+            border-left: none;
+        }
+        .mobile dl dd{
+            display: flex;
+            flex-direction: column;
+            line-height: 30px;
+            text-align: center;
+        }
+        .mobile dl dd a{
+            border: 1px solid #f3f3f3;
+            border-bottom: none;
+            text-decoration: none;
+        }
+
+    </style>
+    <script type="text/javascript" src="../../angular/angular-1.5.8/angular.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+<div class="container">
+    <div class="row">
+        <div class="col-xs-4">
+            <div class="mobile">
+                <dl>
+                    <dt>游戏</dt>
+                    <dd>
+                        <a href="#">红警</a>
+                        <a href="#">全民突击</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>音乐</dt>
+                    <dd>
+                        <a href="#">三生三世</a>
+                        <a href="#">小宝贝</a>
+                        <a href="#">男孩</a>
+                        <a href="#">花开半夏</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>电影</dt>
+                    <dd>
+                        <a href="#">战狼2</a>
+                        <a href="#">权利游戏</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="col-xs-8"></div>
+    </div>
+
+</div>
+
+
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', ['$scope', function ($scope) {
+
+    }])
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

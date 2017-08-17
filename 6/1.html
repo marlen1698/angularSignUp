@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>6ng-model双向绑定</title>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+<form action="1.php" method="post">
+    <input type="text" name="title" ng-model="name">
+    <br/>
+    {{name}}    <br/>
+    <button type="submit">提交</button>
+</form>
+<script type="text/javascript" src="../../angular/angular-1.5.8/angular.min.js"></script>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', ['$scope', function ($scope) {
+        $scope.name = 'majl';
+    }])
+</script>
+
+</body>
+</html>

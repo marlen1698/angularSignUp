@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12 大小写转换 深拷贝</title>
+    <script type="text/javascript" src="../../angular/angular-1.5.8/angular.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', ['$scope', function ($scope) {
+        console.log(angular.version);//版本号
+        console.log(angular.uppercase('majlAmarlen'));//转大写
+        console.log(angular.lowercase('majlAmarlen'));//转小写
+        var obj={name:'majl'};
+        console.log(obj);
+//        var obj2=obj;
+        var obj2={};
+        angular.copy(obj,obj2);
+        obj2.name='marlen';
+        console.log(obj2);
+    }])
+</script>
+
+</body>
+</html>

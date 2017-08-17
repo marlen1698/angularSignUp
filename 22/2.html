@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>22ng-class</title>
+    <script type="text/javascript" src="../../angular/angular-1.5.8/angular.min.js"></script>
+    <style>
+        .red{
+            background: red;
+        }
+        .green{
+            color: green;
+        }
+    </style>
+
+   </head>
+<body ng-app="myApp" ng-controller="myCtrl">
+<table border="1" width="600">
+    <tr>
+        <th>编号</th>
+        <th>姓名</th>
+        <th>年龄</th>
+    </tr>
+    <tr ng-repeat="v in data" ng-class="{red:v.status==0}">
+        <td>{{v.id}}</td>
+        <td >{{v.username}}</td>
+        <td ng-class="{green:v.age>=45}">{{v.age}}</td>
+    </tr>
+</table>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', ['$scope', function ($scope) {
+        $scope.data=[
+            {id:1,'username':'majl','age':25, 'status':0},
+            {id:2,'username':'majl','age':35, 'status':0},
+            {id:3,'username':'majl','age':45, 'status':1},
+            {id:4,'username':'majl','age':55, 'status':0},
+        ]
+
+    }])
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

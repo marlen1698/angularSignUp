@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10 控制复选框</title>
+    <script type="text/javascript" src="../../angular/angular-1.5.8/angular.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+<input type="checkbox" ng-model="status.game" ng-true-value="1" ng-true-value="0">游戏
+<input type="checkbox" ng-model="status.video"ng-true-value="1" ng-true-value="0">电影
+{{status}}
+<div ng-show="status.game==1">
+    <h2>游戏</h2>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+</div>
+<div ng-show="status.video==1">
+    <h2>电影</h2>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+</div>
+
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', ['$scope', function ($scope) {
+        $scope.status = {'game':'0','video':'0'};
+    }])
+</script>
+
+</body>
+</html>

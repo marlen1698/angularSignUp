@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>22ng-class</title>
+    <script type="text/javascript" src="../../angular/angular-1.5.8/angular.min.js"></script>
+    <style>
+        .red{
+            background: red;
+        }
+        .font{
+            font-size: 100px;
+        }
+    </style>
+   </head>
+<body ng-app="myApp" ng-controller="myCtrl">
+
+<div ng-class="{red:true,font:true}">ddddd</div>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', ['$scope', function ($scope) {
+
+
+    }])
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

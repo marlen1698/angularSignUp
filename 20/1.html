@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>20全选与反选</title>
+    <script type="text/javascript" src="../../angular/angular-1.5.8/angular.min.js"></script>
+   </head>
+<body ng-app="myApp" ng-controller="myCtrl">
+<table border="1" width="600px">
+    <tr>
+        <th><input type="checkbox" ng-model="all"><span ng-bind="all?'取消':'全选'"></span></th>
+        <th>姓名</th>
+        <th>年龄</th>
+    </tr>
+    <tr ng-repeat="v in data">
+        <td><input type="checkbox" ng-checked="all"></td>
+        <td>{{v.name}}</td>
+        <td>{{v.age}}</td>
+    </tr>
+</table>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', ['$scope', function ($scope) {
+        $scope.data=[
+            {name:'majl',age:25},
+            {name:'wangh',age:45},
+        ]
+
+    }])
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

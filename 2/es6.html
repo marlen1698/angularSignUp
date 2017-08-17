@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>divStyle</title>
+</head>
+<body>
+<div style="background-color:red; border:1px solid black;">
+
+</div>
+<script>
+    var divStyle = document.querySelector('div').style;
+    function isPropertySupported(property) {
+        if (property in document.body.style) {
+            return true;
+        }
+        var prefixes = ['Moz', 'Webkit', 'O', 'ms', 'Khtml'];
+        var prefProperty = property.charAt(0).toUpperCase() + property.substr(1);
+
+        for (var i = 0; i < prefixes.length; i++) {
+            if ((prefixes[i] + prefProperty) in document.body.style) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    isPropertySupported('background-clip')
+    // true
+</script>
+
+</body>
+</html>

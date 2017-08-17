@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11 操作select列表框</title>
+    <script type="text/javascript" src="../../angular/angular-1.5.8/angular.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+<select name="" id="" ng-options="v.value as v.name for v in data" ng-model="takeway">
+    <option value="">请选择你喜欢的外卖</option>
+</select>
+
+{{takeway}}
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', ['$scope', function ($scope) {
+        $scope.data = [
+            {'name':'美团','value':'takeway'},
+            {'name':'百度外卖','value':'takeway'},
+            {'name':'饿了么','value':'takeway'},
+            {'name':'糯米糯米糯米','value':'takeway'}
+        ]
+    }])
+</script>
+
+</body>
+</html>

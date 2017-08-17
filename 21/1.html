@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>21ng-model-options</title>
+    <style>
+        .demo{
+            text-align: center;
+        }
+        .demo>img{
+            border:2px solid #999;
+            width: 120px;
+            height: 260px;
+            object-fit: cover;
+            object-position: 50% 50%;
+        }
+        img{
+            vertical-align: top;
+        }
+    </style>
+    <script type="text/javascript" src="../../angular/angular-1.5.8/angular.min.js"></script>
+   </head>
+<body ng-app="myApp" ng-controller="myCtrl">
+<input type="text" ng-model="title" ng-model-options="{debounce:500}"><br/>
+<!--<input type="text" ng-model="title" ng-model-options="{updateOn:'blur'}"><br/>-->
+{{title}}
+
+<div class="demo">
+    <img src="../20150506011217.jpeg"/>
+</div>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', ['$scope', function ($scope) {
+
+
+    }])
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

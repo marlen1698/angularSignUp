@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>26demo</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <style>
+        .mobile {
+            border: 1px solid #999999;
+            height: 500px;
+            display: flex;
+        }
+
+        .mobile dl {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column-reverse;
+            flex: 1;
+        }
+
+        .mobile dl dt {
+            background: #000;
+            color: #ffffff;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border: 1px solid #f3f3f3;
+        }
+
+        .mobile dl dt:first-child, .mobile dl:first-child dd a {
+            border-right: none;
+        }
+
+        .mobile dl dt:last-child, .mobile dl:last-child dd a {
+            border-left: none;
+        }
+
+        .mobile dl dd {
+            display: flex;
+            flex-direction: column;
+            line-height: 30px;
+            text-align: center;
+        }
+
+        .mobile dl dd a {
+            border: 1px solid #f3f3f3;
+            border-bottom: none;
+            text-decoration: none;
+        }
+
+    </style>
+    <script type="text/javascript" src="../../angular/angular-1.5.8/angular.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+<form action="" method="post" class="form-horizontal" role="form">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4">
+                <div class="mobile">
+                    <dl>
+                        <dt>游戏</dt>
+                        <dd>
+                            <a href="#">红警</a>
+                            <a href="#">全民突击</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>音乐</dt>
+                        <dd>
+                            <a href="#">三生三世</a>
+                            <a href="#">小宝贝</a>
+                            <a href="#">男孩</a>
+                            <a href="#">花开半夏</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>电影</dt>
+                        <dd>
+                            <a href="#">战狼2</a>
+                            <a href="#">权利游戏</a>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="col-xs-8">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">编辑</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <label for="" class="col-sm-2 control-label">标题:</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="title" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-sm-2 control-label">地址:</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <div class="form-group">
+                                            <label for="" class="col-sm-2 control-label">标题:</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="" class="col-sm-2 control-label">地址:</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button  type="button" class="btn btn-info">添加二级菜单</button>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <label for="" class="col-sm-2 control-label">标题:</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="title" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-sm-2 control-label">地址:</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <div class="form-group">
+                                            <label for="" class="col-sm-2 control-label">标题:</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="" class="col-sm-2 control-label">地址:</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-info">添加二级菜单</button>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-success">添加一级菜单</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</form>
+
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', ['$scope', function ($scope) {
+
+    }])
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

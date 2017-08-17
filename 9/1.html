@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>9 控制单选框</title>
+    <script type="text/javascript" src="../../angular/angular-1.5.8/angular.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+网站开启：<input type="radio" ng-value="1" ng-model="status" >开启
+          <input type="radio" ng-value="0" ng-model="status" >关闭
+          {{status}}
+<div ng-show="status==1">后台维护中。。。。</div>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', ['$scope', function ($scope) {
+        $scope.status=1;
+    }])
+</script>
+
+</body>
+</html>

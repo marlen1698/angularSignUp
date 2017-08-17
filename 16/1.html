@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>16ng-init与ng-trim及表单value与$scope数据提交</title>
+    <script type="text/javascript" src="../../angular/angular-1.5.8/angular.min.js"></script>
+    <script type="text/javascript" src="../../angular/js/jquery-2.1.1.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+<!--<div ng-init="name='majl'"></div>-->
+<!--{{data.name}}-->
+<form action="1.php" method="post">
+    标题：<input type="text" name="title" ng-trim="" ng-model="title">
+    <input type="text" name="data"><br/>
+    <input type="submit"><br/>
+    {{title}}
+</form>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', ['$scope', function ($scope) {
+        $('form').submit(function () {
+            $("[name='data']").val($scope.title);
+//            alert(1);
+//            return false;
+        });
+        //ng-init="name='majl'";==$scope.name='majl';
+        //        $scope.data={name:'majl'}
+    }])
+</script>
+
+</body>
+</html>
+
+
+
+
+
+

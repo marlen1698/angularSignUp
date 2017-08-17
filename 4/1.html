@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4依赖性注入</title>
+    <script type="text/javascript" src="../../angular/angular-1.5.8/angular.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+<div>
+    商品名：{{goods.data.title}}<br/>
+    商品价格：{{goods.data.price}}<br/>
+    商品数量：{{goods.data.number}}    <input type="text" ng-model="goods.data.number"><br/>
+
+    总计：{{goods.data.number*goods.data.price}}<br/>
+    <button type="button" ng-click="goods.add()">添加</button>
+    <button type="button" ng-click="goods.reduce()">减少</button>
+</div>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', ['$scope', function ($scope) {
+//        $scope.goods = {'title': 'mac', 'price': '17', 'number': '0'};
+//        $scope.add = function () {
+//            $scope.goods.number = Math.min(++$scope.goods.number, 6);
+//        };
+//        $scope.reduce = function () {
+//            $scope.goods.number = Math.max(--$scope.goods.number, 0);
+//        };
+        $scope.goods = {
+            data: {'title': 'mac', 'price': '300', 'number': '0'},
+            add: function () {
+                $scope.goods.data.number = Math.min(++$scope.goods.data.number, 99);
+            },
+            reduce: function () {
+                $scope.goods.data.number = Math.max(--$scope.goods.data.number, 0);
+            },
+        }
+    }])
+</script>
+
+</body>
+</html>

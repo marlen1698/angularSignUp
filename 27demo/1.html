@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>27demo</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <style>
+        .mobile {
+            border: 1px solid #999999;
+            height: 500px;
+            display: flex;
+        }
+
+        .mobile dl {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column-reverse;
+            flex: 1;
+        }
+
+        .mobile dl dt {
+            background: #000;
+            color: #ffffff;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border: 1px solid #f3f3f3;
+        }
+
+        .mobile dl dd {
+            display: flex;
+            flex-direction: column;
+            line-height: 30px;
+            text-align: center;
+        }
+
+        .mobile dl dd a {
+            border: 1px solid #f3f3f3;
+            border-bottom: none;
+            text-decoration: none;
+        }
+
+    </style>
+    <script type="text/javascript" src="../../angular/angular-1.5.8/angular.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+<form action="" method="post" class="form-horizontal" role="form">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4">
+                <div class="mobile">
+                    <dl ng-repeat="v in data.button">
+                        <dt ng-bind="v.name"></dt>
+                        <dd ng-repeat="d in v.sub_button">
+                            <a href="#" ng-bind="d.name"></a>
+                        </dd>
+                    </dl>
+
+                </div>
+            </div>
+            <div class="col-xs-8">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">编辑</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="panel panel-default" ng-repeat="v in data.button">
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <label for="" class="col-sm-2 control-label">标题:</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" ng-model="v.name" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-sm-2 control-label">地址:</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" ng-model="v.key" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="panel panel-default" ng-repeat="d in v.sub_button">
+                                    <div class="panel-body">
+                                        <div class="form-group">
+                                            <label for="" class="col-sm-2 control-label">标题:</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" ng-model="d.name"
+                                                       placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="" class="col-sm-2 control-label">地址:</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" ng-model="d.key" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-info">添加二级菜单</button>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-success">添加一级菜单</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</form>
+
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', ['$scope', function ($scope) {
+        $scope.data = {
+            "button": [
+                {
+                    "type": "click",
+                    "name": "今日歌曲",
+                    "key": "V1001_TODAY_MUSIC"
+                },
+                {
+                    "type": "view",
+                    "name": "电影",
+                    "key": "V1001_TODAY_MUSIC",
+                    "sub_button": [
+                        {
+                            "type": "view",
+                            "name": "搜索",
+                            "url": "http://www.soso.com/"
+                        },
+                        {
+                            "type": "miniprogram",
+                            "name": "wxa",
+                            "url": "http://mp.weixin.qq.com",
+                            "appid": "wx286b93c14bbf93aa",
+                            "pagepath": "pages/lunar/index"
+                        },
+                    ]
+                },
+                {
+                    "name": "菜单",
+                    "sub_button": [
+                        {
+                            "type": "view",
+                            "name": "搜索",
+                            "url": "http://www.soso.com/"
+                        },
+                        {
+                            "type": "miniprogram",
+                            "name": "wxa",
+                            "url": "http://mp.weixin.qq.com",
+                            "appid": "wx286b93c14bbf93aa",
+                            "pagepath": "pages/lunar/index"
+                        },
+                        {
+                            "type": "click",
+                            "name": "赞一下我们",
+                            "key": "V1001_GOOD"
+                        }]
+                }]
+        }
+
+    }])
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>14json数据转换本地存储及$scope数据序列化</title>
+    <script type="text/javascript" src="../../angular/angular-1.5.8/angular.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+{{data}}
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', ['$scope', function ($scope) {
+
+        $scope.data={'name':'majl'};
+        console.log( $scope.data.name);
+       // sessionStorage 会话存储
+        // localStorage 本地存储
+        localStorage.setItem('data',angular.toJson($scope.data));//json对象转换成json字符串
+
+
+
+    }])
+</script>
+
+</body>
+</html>
